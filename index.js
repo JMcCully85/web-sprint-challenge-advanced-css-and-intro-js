@@ -235,7 +235,7 @@ function getArtistByIndex(array, number) {
   return `the artist at index ${array[number].id} is ${array[number].name}`;
 }
 
-console.log("3:", getArtistByIndex(artists, 0, 0));
+// console.log("3:", getArtistByIndex(artists, 0, 0));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -312,9 +312,17 @@ Use lotsOfArt to do the following:
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ... "Albrecht Dürer"]*/
 
-function lotsOfArt(/*Your Code Here*/) {
-  /*Your Code Here*/
+function lotsOfArt(artists) {
+  const paintingArr = [];
+  for (let i = 0; i < artists.length; i++) {
+    if (artists[i].paintings >= 100) {
+      paintingArr.push(artists[i].name);
+    }
+  }
+  return paintingArr;
 }
+
+console.log("7:", lotsOfArt(artists));
 
 /* ***** END OF TASKS ***** */
 
