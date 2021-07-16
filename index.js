@@ -219,7 +219,7 @@ console.log("1b:", artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-artists[8].name = "Vincent Van Gogh";
+// artists[8].name = "Vincent Van Gogh";
 
 console.log("2:", artists[8].name);
 
@@ -269,9 +269,12 @@ Use removeArtist to do the following:
 
 For example, if removeArtist is invoked with the artists array and the number 0, it will remove Amedeo Modigliani from our dataset and return the number 19. */
 
-function removeArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function removeArtist(array, number) {
+  artists.splice(number, 1);
+  return artists.length;
 }
+
+console.log("5:", removeArtist(artists.length));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use addArtist to do the following: 
@@ -289,9 +292,18 @@ Use addArtist to do the following:
 
 Example: addArtist(artists) should return the artists array with the above object added to the end of the array. */
 
-function addArtist(/*Your Code Here*/) {
-  /*Your Code Here*/
+function addArtist(artists) {
+  artists.push({
+    id: 20,
+    name: "Jeremy McCully",
+    years: "1985 - 2021",
+    genre: "Web Design,",
+    nationality: "caucasion",
+    bio: "Consequat Lorem exercitation consectetur consectetur amet et.",
+  });
+  return artists;
 }
+console.log("6:", addArtist(artists));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Use lotsOfArt to do the following: 
