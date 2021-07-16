@@ -219,7 +219,7 @@ console.log("1b:", artists[2].bio);
 (no function needed) 
 There is a typo in your dataset 😱 The 9th artist, Vincent Van Gogh is currently Vincent Van Dough. Use an array method to fix this issue and console.log() to check your work. */
 
-// artists[8].name = "Vincent Van Gogh";
+artists[8].name = "Vincent Van Gogh";
 
 console.log("2:", artists[8].name);
 
@@ -232,10 +232,12 @@ Use getArtistByIndex to do the following:
 Example, if getArtistByIndex is invoked with the artists array and the number 0, it will return `the artist at index 0 is Amedeo Modigliani` */
 
 function getArtistByIndex(array, number) {
+  //recieved the array and number
   return `the artist at index ${array[number].id} is ${array[number].name}`;
+  //returned the string in the format requested using string template literal
 }
 
-// console.log("3:", getArtistByIndex(artists, 0, 0));
+// console.log("3:", getArtistByIndex(artists, 0, 0)); //had to comment out this console.log because it was causing a issue with task 7
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Use get20s to do the following: 
@@ -248,12 +250,17 @@ If correct, the function should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(array) {
   const newArr = [];
+  //created a new array
   for (let i = 0; i < array.length; i++) {
+    //for loop to cycle through the array
     const tempArr = array[i].years.split(" - ");
+    //used .split to remove the - from the years string
     let birth = parseInt(tempArr[0]);
-    let death = parseInt(tempArr[0]);
+    let death = parseInt(tempArr[1]);
+    //turned the strings into integers
     if (birth >= 1900 && birth < 2000 && death >= 1900 && death < 2000) {
       newArr.push(array[i].name);
+      //pushed the names of the artists with the requested criteria to a new array
     }
   }
   return newArr;
